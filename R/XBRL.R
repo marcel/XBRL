@@ -67,7 +67,7 @@ XBRL <- function() {
         cat("Downloading to cache dir...")
       }
 
-      status <- try(download.file(file, cached.file, method="auto", quiet = !verbose),
+      status <- try(download.file(file, cached.file, method = getOption("download.file.method"), quiet = !verbose),
                     silent=TRUE)
 
       if (class(status)[1] == "try-error" || status == 1) {
